@@ -1,0 +1,44 @@
+import random
+import os 
+os.system("cls")
+def ending_msg():
+    if score == "1":
+        print("Better luck nest time")
+    elif score == "2" :
+        print("Good job, you played really well!")
+        print("You won less than half the rounds")
+    elif score == "3" :
+        print("Good job, you played really well!")
+        print("You won less than half the rounds")
+    elif score == "4" :
+        print("Good job, you played really well!")
+        print("You won less than half the rounds")
+    else :
+        print("Wow, you played perfectly")
+
+score = 0
+round = 1
+print("Welcome to the High-Low game!")
+print("-"*20)
+while(round !=6):
+    human = random.randint(0,101)
+    computer = random.randint(0 , 101)
+    print("Round " , round)
+    print("your number is " , human)
+    user_guess = input("Do you think your number is higher or lower than the comuter's?: ")
+    if (user_guess == "lower") and  computer > human:
+        print("you were right! The computer's number was" , computer)
+        score = score + 1
+        print("Your score is now " , score)
+    elif(user_guess == "higher") and computer < human :
+        print("you were right! The computer's number was" , computer)
+        score = score + 1
+        print("Your score is now " , score)
+    else:
+        print("Aww,that's incorrect .The computer's number was ", computer)
+        score = score
+        print("Your score is now " , score)
+    round = round + 1
+    print("")
+ending_msg()
+print("Thankyou for playing!")
